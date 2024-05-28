@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#app {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background: url('../util/img/chizi.webp') no-repeat center;
+}
+
+.mainBox {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+
+}
+
+.header {
+    height: 12%;
+    /* max-height: 200px; */
+    /* background-color: antiquewhite; */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-left {
+
+    display: flex;
+    align-items: center;
+    height: 100%;
+    flex: 3;
+}
+
+.star {
+    background: url('../util/img/brand.png') no-repeat center;
+    background-size: contain;
+    height: 40px;
+    width: 50px;
+    margin-left: 8%;
+    margin-right: 8%;
+}
+
+.header-left span {
+    color: white;
+    font-weight: 600;
+    font-size: 19px;
+}
+
+.header-center {
+    background-color: rgb(0, 255, 128);
+    flex: 4;
+}
+
+
+.header-right {
+    /* background-color: rgb(149, 0, 255); */
+    flex: 2;
+    display: flex;
+    height: 100%;
+    justify-content: right;
+    align-items: center;
+}
+
+.yuanshi {
+
+    background-color: rgba(57, 75, 88, 0.501);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 3;
+    height: 35%; 
+    border-radius: 500px;
+
+}
+.yuanshi-left{
+    height: 100%;
+    flex: 1;
+    background: url('../util/img/primogem.webp') no-repeat center;
+    background-size: contain;
+
+}
+
+.yuanshi-num{
+    width: 60px;
+    color: white;
+    font-weight: 500;
+    font-size: 17px;
+}
+.yuanshi-add{
+    height: 80%;
+    flex: 1;
+    background: url('../util/img/add.png') no-repeat center;
+    background-size: contain;
+    flex: 1;
+}
+
+.jiuchan {  
+    margin-left: 4%;
+    background-color: rgba(57, 75, 88, 0.501);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 35%;
+    border-radius: 500px;
+    flex: 2;
+}
+
+
+.jiuchan-left{
+    margin-left: 5%;
+    margin-right: 5%;
+    height: 90%;
+    
+    flex: 2;
+    background: url('../util/img/intertwined-fate.webp') no-repeat center;
+    background-size: contain;
+}
+
+.jiuchan-num{
+    
+    flex: 5;
+    /* width: 60px; */
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.close {
+    height: 40%;
+    /* background-color: rgb(0, 229, 23); */
+    position: relative;
+   
+    flex: 2;
+}
+.close-box{
+
+    position: absolute;
+    left:30%;
+    height:25px;
+    width: 25px;
+    border-radius: 200px;
+   /* background-color: black; */
+   border: 5px rgba(245, 250, 251, 0.747) solid;
+
+   
+}
+.close-box::before{
+    content: "";
+    box-sizing: border-box;
+    top: calc(50% - 12.5px);
+    left: calc(50% - 12.5px);
+    position: absolute;
+    height:25px;
+    width: 25px;
+    background: url('../util/img/close.png') no-repeat center;
+    background-size: contain;
+    background-color:rgb(230,229,212) ;
+    border-radius: 200px;
+    border: 5px rgba(255, 255, 255, 0) solid;
+} 
+
+.center{
+    height: 76%;
+    width: 100vw;
+    display: flex;
+    /* background-color: rgb(35, 255, 255); */
+}
+.center-left{
+    width: 16%;
+    /* background-color: darkviolet; */
+}
+.center-center{
+    width: 68%;
+    /* background-color: blue; */
+    background: url('../util/img/changzhuqiyuan.png') no-repeat center;
+    background-size:contain ;
+}
+.center-right{
+    width: 16%;
+    /* background-color: crimson; */
+}
+

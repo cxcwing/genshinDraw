@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css"> 
+</head>
+<style>
+ 
+</style>
+
+<body>
+    <script src="./util/vue.global.js"></script>
+
+    <div id="app">
+
+        <div class="mainBox">
+            <div class="header">
+                <div class="header-left">
+                    <div class="star"></div>
+                    <span>祈愿</span>
+                </div>
+                <div class="header-center">
+
+                </div>
+                <div class="header-right">
+                    <div class="yuanshi">
+                        <div class="yuanshi-left"></div>
+                        <span class="yuanshi-num">521521</span>
+                        <div class="yuanshi-add"></div>
+                    </div>
+
+                    <div class="jiuchan">
+                        <div class="jiuchan-left"></div>
+                        <span class="jiuchan-num">521</span>
+                    </div>
+
+                    <div class="close">
+                        <div class="close-box"></div>
+                    </div>
+
+
+
+                </div>
+            </div>
+            <div class="center">
+                <div class="center-left"></div>
+                <div class="center-center"></div>
+                <div class="center-right"></div>
+            </div>
+            <div class="footer"></div>
+        </div>
+
+
+
+        <div v-show="isShow">
+            <video src="./util/video/star.mp4" width="60%"> </video>
+
+        </div>
+    </div>
+
+    <script>
+        const { createApp, ref } = Vue
+
+        createApp({
+            setup() {
+                const list = ['a', 'b', 'c']
+                const message = ref('fsadasdas')
+                const isShow = ref(false)
+                function makeRandom(min, max) {
+                    console.log(parseInt(Math.random() * (max - min + 1) + min))
+                    return parseInt(Math.random() * (max - min + 1) + min)
+                }
+                makeRandom(110, 120)
+                return {
+                    message,
+                    list
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+
+</html>
