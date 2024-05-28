@@ -8,13 +8,16 @@
     width: 100vw;
     overflow: hidden;
     background: url('../util/img/chizi.webp') no-repeat center;
+    background-size:cover ;
+    
+
 }
 
 .mainBox {
     height: 100vh;
     width: 100vw;
     overflow: hidden;
-
+    background-color: rgba(0, 0, 0, 0.17);
 }
 
 .header {
@@ -45,9 +48,9 @@
 }
 
 .header-left span {
-    color: white;
+    color: rgb(255, 255, 255);
     font-weight: 600;
-    font-size: 19px;
+    font-size: 20px;
 }
 
 .header-center {
@@ -85,7 +88,7 @@
 }
 
 .yuanshi-num{
-    width: 60px;
+    flex: 2;
     color: white;
     font-weight: 500;
     font-size: 17px;
@@ -95,7 +98,7 @@
     flex: 1;
     background: url('../util/img/add.png') no-repeat center;
     background-size: contain;
-    flex: 1;
+
 }
 
 .jiuchan {  
@@ -135,6 +138,7 @@
     position: relative;
    
     flex: 2;
+    cursor: pointer;
 }
 .close-box{
 
@@ -144,10 +148,17 @@
     width: 25px;
     border-radius: 200px;
    /* background-color: black; */
-   border: 5px rgba(245, 250, 251, 0.747) solid;
+   border: 5px rgba(245, 250, 251, 0.827) solid;
 
-   
 }
+.close-box:hover{
+
+
+   border: 5px rgba(242, 233, 171, 0.827) solid;
+    transform: scale(1.05);
+
+}
+
 .close-box::before{
     content: "";
     box-sizing: border-box;
@@ -164,7 +175,7 @@
 } 
 
 .center{
-    height: 76%;
+    height: 70%;
     width: 100vw;
     display: flex;
     /* background-color: rgb(35, 255, 255); */
@@ -184,3 +195,120 @@
     /* background-color: crimson; */
 }
 
+.footer{
+    /* padding-top: 20%; */
+    margin-top: 2vh;
+    height: 16%;
+
+    display: flex;
+    justify-content: space-between;
+
+}   
+
+.footer-left{
+    margin-left:5% ;
+    height: 100%;
+    flex:1;
+
+}
+
+.footer-left-top{
+    height: 50%;
+}   
+.XHBox{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+
+.XHBoxSR{
+    display: flex;
+    align-items: center;
+    margin-right:30px ;
+}
+.xinghuiSR{
+   
+
+    width: 34px;
+    height: 34px;
+    background: url('../util/img/masterless-starglitter.webp') no-repeat center;
+    background-size:contain ;
+
+}
+
+.XHBoxSR span{
+    margin-left:10px ;
+    color: white;
+}
+
+
+.XHBoxR{
+    display: flex;
+    align-items: center;
+    margin-right:30px ;
+}
+
+.xinghuiR{
+    width: 35px;
+    height: 35px;
+    background: url('../util/img/masterless-stardust.webp') no-repeat center;
+    background-size:contain ;
+}
+
+
+.XHBoxR span{
+    margin-left:10px ;
+    color: white;
+}
+
+
+
+
+.footer-left-bottom{
+    height: 50%;
+
+}
+
+.history{
+    background-color: rgba(255, 228, 196, 0.721);
+    height: 35px;
+    width: 150px;
+    color: rgb(3, 42, 91);
+    font-weight: 600;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 300px;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px rgba(255, 221, 148, 0.529);
+}
+
+.footer-right{
+    height: 100%;
+    flex: 1;
+    /* background-color: blanchedalmond; */
+    display: flex;
+    align-items: center;
+    padding-left:40% ;
+}
+
+
+.chou{
+    text-align: center;
+    line-height: 60px;
+    height: 60px;
+    width: 240px;
+    background: url('../util/img/button.webp') no-repeat center; 
+    background-size: contain;
+    cursor: pointer;
+    color: rgb(237, 176, 85);
+    font-size: 17px;
+    font-weight:600;
+
+}
+
+.chou:hover{
+    transform:scale(0.98) ;
+    color: rgb(255, 154, 2);
+}
