@@ -1,6 +1,11 @@
+@font-face{
+    font-family:'yuansShen' ;
+    src: url('../util/optimized_zh_web.woff2');
+}
 * {
     margin: 0;
     padding: 0;
+    font-family:'yuansShen' ;
 }
 
 #app {
@@ -9,7 +14,7 @@
     overflow: hidden;
     background: url('../util/img/chizi.webp') no-repeat center;
     background-size:cover ;
-    
+    position: relative;
 
 }
 
@@ -49,7 +54,6 @@
 
 .header-left span {
     color: rgb(255, 255, 255);
-    font-weight: 600;
     font-size: 20px;
 }
 
@@ -90,7 +94,7 @@
 .yuanshi-num{
     flex: 2;
     color: white;
-    font-weight: 500;
+
     font-size: 17px;
 }
 .yuanshi-add{
@@ -128,7 +132,7 @@
     flex: 5;
     /* width: 60px; */
     color: white;
-    font-weight: 500;
+
     font-size: 18px;
 }
 
@@ -276,7 +280,6 @@
     height: 35px;
     width: 150px;
     color: rgb(3, 42, 91);
-    font-weight: 600;
     line-height: 35px;
     text-align: center;
     border-radius: 300px;
@@ -304,11 +307,58 @@
     cursor: pointer;
     color: rgb(237, 176, 85);
     font-size: 17px;
-    font-weight:600;
 
 }
 
 .chou:hover{
     transform:scale(0.98) ;
     color: rgb(255, 154, 2);
+}
+
+.MyVideo{
+    min-width: 1300px;
+    width:100vw;
+    height: 100.5vh;
+    position: absolute;
+
+    left: 0;
+    top: 0;
+    z-index: 1000;
+}
+.studentsBox{
+    width:100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background:url('../util/img/splash-background.webp') no-repeat center;
+    background-size: cover;
+    z-index: 1000;
+}
+.nameBox{
+    position: absolute;
+    height: 80%;
+    width: 60%;
+    top: calc(50% - 40vh);
+    left: calc(50% - 30%); 
+    background: url('../util/img/bg-catalyst.webp') no-repeat center;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: black; */
+}
+.name{
+    writing-mode: vertical-rl; /* 纵向从右到左 */  
+    text-orientation: upright; /* 文字直立 */ 
+    font-size: 40px;
+    line-height: 6em;
+    word-spacing:24px;
+    transition: all 1s;
+    transform: scale(20);
+}
+
+.name.active{
+    transition: all 1s;
+    transform: scale(1);
 }

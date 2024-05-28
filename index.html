@@ -13,6 +13,7 @@
 
 <body>
     <script src="./util/vue.global.js"></script>
+    <script src="./js/config.js"></script>
 
     <div id="app">
 
@@ -72,11 +73,11 @@
                         <div class="history">
                             历史记录
                         </div>
-                        
+
                     </div>
                 </div>
                 <div class="footer-right">
-                    <div class="chou">
+                    <div class="chou" @click="handleDrew">
                         单次抽取
                     </div>
                 </div>
@@ -85,28 +86,116 @@
 
 
 
-        <div v-show="isShow">
-            <video src="./util/video/star.mp4" width="60%"> </video>
-
+        <div class="MyVideo" v-show="isShow">
+            <video @ended="VideoEnd" src="./util/video/star.mp4" width="100%" ref="myVideo"> </video>
+            <!-- aaaaaaaaaaaaaaaa -->
+        </div>
+        <!-- v-show="studentsBoxShow" -->
+        <div class="studentsBox" v-show="studentsBoxShow" @click="toInit">
+            <div class="nameBox">
+                <p :class="nameClass" v-show="nameShow">{{thisName}}</p>
+            </div>
         </div>
     </div>
 
     <script>
         const { createApp, ref } = Vue
 
+        const students = studentsList.split(',')
         createApp({
             setup() {
-                const list = ['a', 'b', 'c']
+                const historyList = ref([])
+                const myVideo = ref(null)
                 const message = ref('fsadasdas')
                 const isShow = ref(false)
+                const studentsBoxShow = ref(false)
+                let id = 0
+                const thisName = ref('嗷 嗷 嗷')
+                const nameShow = ref(false)
+                const nameClass = ref(['name'])
+                let timer = null
+                function setTimer (){
+                    if(timer !== null){
+                        clearTimeout(timer)
+                    }
+                    timer = setTimeout(() => {
+                        nameClass.value.push('active')
+                 
+                    }, 100)
+                }
+                function removeI(item){
+                    let index = nameClass.value.indexOf(item)
+                    if(index!=-1){
+
+                        nameClass.value.splice(index,1)
+                    }
+                }
+
                 function makeRandom(min, max) {
-                    console.log(parseInt(Math.random() * (max - min + 1) + min))
+                    // console.log(parseInt(Math.random() * (max - min + 1) + min)) 
                     return parseInt(Math.random() * (max - min + 1) + min)
                 }
-                makeRandom(110, 120)
+
+
+
+                function asn() {
+                    isShow.value = false
+                    studentsBoxShow.value = true
+                    nameShow.value = true
+                    setTimer()
+                 
+                    id = makeRandom(0, students.length)
+                    students[id]
+                    for (let item in students[id]) {
+                        if (item === students[id].length - 1) {
+                            thisName.value += students[id][item] + ' '
+                        } else {
+                            thisName.value += students[id][item] + ' '
+                        }
+                    }
+
+
+                }
+
+                function init(){
+                    isShow.value = false
+                    studentsBoxShow.value = false
+                    nameShow.value = false
+                    removeI('active')
+
+                }
+                const handleDrew = ()=>{
+                    isShow.value = true
+                    id = makeRandom(0, students.length)
+                    myVideo.value.play()
+                }
+
+                const VideoEnd = () => {
+
+                    asn()
+                    console.log(historyList.value)
+                    historyList.value.push(thisName.value)
+
+                }
+                
+                const toInit = ()=>{
+                    thisName.value = ''
+                    init()
+                }
+
+
                 return {
                     message,
-                    list
+                    historyList,
+                    handleDrew,
+                    myVideo,
+                    isShow,
+                    VideoEnd,
+                    studentsBoxShow,
+                    thisName,
+                    nameShow,
+                    toInit,
+                    nameClass
                 }
             }
         }).mount('#app')
