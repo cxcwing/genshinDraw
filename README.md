@@ -1,5 +1,5 @@
 进入 js/config.js 配置人名.
 
-![](E:\桌面\点名\img\1.png)
+![](https://github.com/cxcwing/genshinDraw/blob/master/img/1.png)
 
-![](E:\桌面\点名\img\2.png)
+![](https://github.com/cxcwing/genshinDraw/blob/master/img/2.png)
