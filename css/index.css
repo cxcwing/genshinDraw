@@ -351,9 +351,9 @@
 .name{
     writing-mode: vertical-rl; /* 纵向从右到左 */  
     text-orientation: upright; /* 文字直立 */ 
-    font-size: 40px;
-    line-height: 6em;
-    word-spacing:24px;
+    font-size: 60px;
+    /* line-height: 4em; */
+    word-spacing:10px;
     transition: all 1s;
     transform: scale(20);
 }
